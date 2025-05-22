@@ -26,5 +26,8 @@ Route::post('/registerauth',[AuthController::class, 'registerauth'])->name('auth
 Route::get('/login',[AuthController::class, 'login'])->name('auth.login');
 Route::post('/loginauth',[AuthController::class, 'loginauth'])->name('auth.loginauth');
 
-// DashboardController 
-Route::get('/Dashboard',[DashoardController::class, 'index'])->name('Dashboard');
+// Middleware route 
+Route::middleware('AuthMiddleware')->group(function () {
+   // DashboardController 
+Route::get('/Dashboard',[DashoardController::class, 'index'])->name('Dashboard'); 
+});

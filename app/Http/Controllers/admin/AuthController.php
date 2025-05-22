@@ -31,9 +31,15 @@ class AuthController extends Controller
     return view('admin.auth.login');
    }
    public function loginauth(Request $req){
-    if(Auth::attempt(['email'=>$req->email,'password'=>$req->psssword])){
-        return redirect()->route('Dashboard')->with('success','you are login successfully');
-    }
+       $req->validate([
+            'email'=>'required',
+            'password'=>'required',
+        ]);
+    if(Auth::attempt(['email'=>$req->email,'password'=>$req->password])){
+        return redirect()->route('Dashboard')->with('success','you are login Successfully');
+         }else{
+        return redirect()->route('auth.login')->with('danger','Either Email/password is Incorrect');
+         }
    
    }
    

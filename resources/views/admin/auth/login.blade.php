@@ -20,7 +20,7 @@
     <link href="{{ url('admin/css/theme.css') }}" rel="stylesheet" media="all">
 
 </head>
-
+@include('admin.layouts.message')
 <body class="animsition">
     <div class="page-wrapper">
         <div class="page-content--bge5">
@@ -33,16 +33,28 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="" method="post">
+                            <form action="{{ route('auth.loginauth') }}" method="post">
+                                @csrf
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <input class="au-input au-input--full" type="email" value="{{ old('email') }}" name="email" placeholder="Email">
                                 </div>
+                                    @error('email')
+                                <div class="text text-danger">
+                                    {{ $message }}
+
+                                </div>
+                                @enderror
                                 <div class="form-group">
                                     <label>Password</label>
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
-                               
+                                 @error('password')
+                                <div class="text text-danger">
+                                    {{ $message }}
+
+                                </div>
+                                @enderror
                                 <button class="au-btn au-btn--block au-btn--green m-b-20 mt-3" type="submit">sign in</button>
                              
                             </form>

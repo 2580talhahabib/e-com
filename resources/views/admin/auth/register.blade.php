@@ -24,7 +24,7 @@
     <link href="{{ url('admin/css/theme.css') }}" rel="stylesheet" media="all"> 
 
 </head>
-
+@include('admin.layouts.message')
 <body class="animsition">
     <div class="page-wrapper">
         <div class="page-content--bge5">
