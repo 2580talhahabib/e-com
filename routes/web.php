@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AuthController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\CouponController;
 use App\Http\Controllers\admin\DashoardController;
+use App\Http\Controllers\admin\SizeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,4 +49,12 @@ Route::post('/Coupon/store',[CouponController::class,'store'])->name('Coupon.sto
 Route::get('/Coupon/edit/{id}',[CouponController::class,'edit'])->name('Coupon.edit');
 Route::post('/Coupon/update/{id}',[CouponController::class,'update'])->name('Coupon.update');
 Route::post('/Coupon/destroy/{id}',[CouponController::class,'destroy'])->name('Coupon.destroy');
+
+// Size  Controller 
+Route::get('/size/create',[SizeController::class,'create'])->name('size.create');
+Route::get('/size/index',[SizeController::class,'index'])->name('size.index');
+Route::post('/size/store',[SizeController::class,'store'])->name('size.store');
+Route::get('/size/edit/{id}',[SizeController::class,'edit'])->name('size.edit');
+Route::post('/size/update/{id}',[SizeController::class,'update'])->name('size.update');
+Route::post('/size/destroy/{id}',[SizeController::class,'destroy'])->name('size.destroy');
 });

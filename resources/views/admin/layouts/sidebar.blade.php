@@ -8,16 +8,20 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub" style="list-style:none;">
-                            <a class="js-arrow" href="#" style="text-decoration: none;color:gray">
+                            <a class="js-arrow  {{ request()->routeIs('Dashboard') ? 'text-success ' : '' }}" href="#" style="text-decoration: none;color:gray">
                                 <i class="fas fa-tachometer-alt "></i>Dashboard</a>
                         </li>
                          <li class="active has-sub" style="list-style:none;">
-                            <a class="js-arrow" href="{{ route('category.index') }}" style="text-decoration: none;color:gray">
+                            <a class="js-arrow  {{ request()->routeIs('category.index') ? 'text-success ' : '' }}" href="{{ route('category.index') }}" style="text-decoration: none;color:gray">
                                 <i class="fas fa-tachometer-alt "></i>Category</a>
                         </li>
-                        <li class="active has-sub" style="list-style:none;">
-                            <a class="js-arrow" href="{{ route('Coupon.index') }}" style="text-decoration: none;color:gray">
+                        <li class="active has-sub" style="list-style:none;"   >
+                            <a class="js-arrow  {{ request()->routeIs('Coupon.index') ? 'text-success ' : '' }}" href="{{ route('Coupon.index') }}" style="text-decoration: none;color:gray">
                                 <i class="fas fa-tachometer-alt "></i>Coupon</a>
+                        </li>
+                         <li class="active has-sub" style="list-style:none;"   >
+                            <a class="js-arrow  {{ request()->routeIs('size.index') ? 'text-success ' : '' }}" href="{{ route('size.index') }}" style="text-decoration: none;color:gray">
+                                <i class="fas fa-tachometer-alt "></i>Size</a>
                         </li>
                     </ul>
                 </nav>
