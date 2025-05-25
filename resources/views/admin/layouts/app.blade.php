@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>@yield('page-title')</title>
 
     <!-- Fontfaces CSS-->
     <link href="{{ url('admin/css/font-face.css') }}" rel="stylesheet" media="all">
@@ -152,7 +152,7 @@
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
         </div>
-
+@include('admin.layouts.footer')
     </div>
 
     <!-- Jquery JS-->

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AuthController;
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\DashoardController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,4 +31,12 @@ Route::post('/loginauth',[AuthController::class, 'loginauth'])->name('auth.login
 Route::middleware('AuthMiddleware')->group(function () {
    // DashboardController 
 Route::get('/Dashboard',[DashoardController::class, 'index'])->name('Dashboard'); 
+
+// category Controller 
+Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
+Route::get('/category/index',[CategoryController::class,'index'])->name('category.index');
+Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
+Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
+Route::post('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
+Route::post('/category/destroy/{id}',[CategoryController::class,'destroy'])->name('category.destroy');
 });

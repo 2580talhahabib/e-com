@@ -12,7 +12,7 @@
                                 <i class="fas fa-tachometer-alt "></i>Dashboard</a>
                         </li>
                          <li class="active has-sub" style="list-style:none;">
-                            <a class="js-arrow" href="#" style="text-decoration: none;color:gray">
+                            <a class="js-arrow" href="{{ route('category.index') }}" style="text-decoration: none;color:gray">
                                 <i class="fas fa-tachometer-alt "></i>Category</a>
                         </li>
                     </ul>

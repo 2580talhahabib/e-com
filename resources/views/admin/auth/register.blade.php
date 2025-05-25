@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Register</title>
+    <title>   {{ Config::get('constant.site_name') }}</title>
 
     <!-- Fontfaces CSS-->
     <link href="{{ url('admin/css/font-face.css') }}" rel="stylesheet" media="all">
@@ -26,12 +26,14 @@
 </head>
 @include('admin.layouts.message')
 <body class="animsition">
+    {{ Config::get('config.site_name') }}
     <div class="page-wrapper">
         <div class="page-content--bge5">
             <div class="container">
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
+                       
                             <a href="#">
                                 <img src="{{ url('admin/images/icon/logo.png') }}" alt="CoolAdmin">
                             </a>
