@@ -15,6 +15,10 @@
                             <a class="js-arrow" href="{{ route('category.index') }}" style="text-decoration: none;color:gray">
                                 <i class="fas fa-tachometer-alt "></i>Category</a>
                         </li>
+                        <li class="active has-sub" style="list-style:none;">
+                            <a class="js-arrow" href="{{ route('Coupon.index') }}" style="text-decoration: none;color:gray">
+                                <i class="fas fa-tachometer-alt "></i>Coupon</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

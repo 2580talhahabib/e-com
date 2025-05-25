@@ -34,10 +34,7 @@ class CategoryController extends Controller
     }
        public function update(Request $req,$id){
         $update=Category::find($id);
-        $req->validate([
-            'name'=>'required',
-        'slug'=>'required',  
-        ]);
+       
     $update->update([
             'name'=>$req->name,
             'slug'=>str_replace(' ','-',strtolower($req->slug)),

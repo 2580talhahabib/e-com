@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\AuthController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\CouponController;
 use App\Http\Controllers\admin\DashoardController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,4 +40,12 @@ Route::post('/category/store',[CategoryController::class,'store'])->name('catego
 Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
 Route::post('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
 Route::post('/category/destroy/{id}',[CategoryController::class,'destroy'])->name('category.destroy');
+
+// Coupon Controller 
+Route::get('/Coupon/create',[CouponController::class,'create'])->name('Coupon.create');
+Route::get('/Coupon/index',[CouponController::class,'index'])->name('Coupon.index');
+Route::post('/Coupon/store',[CouponController::class,'store'])->name('Coupon.store');
+Route::get('/Coupon/edit/{id}',[CouponController::class,'edit'])->name('Coupon.edit');
+Route::post('/Coupon/update/{id}',[CouponController::class,'update'])->name('Coupon.update');
+Route::post('/Coupon/destroy/{id}',[CouponController::class,'destroy'])->name('Coupon.destroy');
 });
