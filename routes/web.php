@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ColorController;
 use App\Http\Controllers\admin\CouponController;
 use App\Http\Controllers\admin\DashoardController;
+use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\SizeController;
 use Illuminate\Support\Facades\Route;
 
@@ -66,4 +67,12 @@ Route::post('/color/store',[ColorController::class,'store'])->name('color.store'
 Route::get('/color/edit/{id}',[ColorController::class,'edit'])->name('color.edit');
 Route::post('/color/update/{id}',[ColorController::class,'update'])->name('color.update');
 Route::post('/color/destroy/{id}',[ColorController::class,'destroy'])->name('color.destroy');
+
+// Product  Controller 
+Route::get('/product/create',[ProductController::class,'create'])->name('product.create');
+Route::get('/product/index',[ProductController::class,'index'])->name('product.index');
+Route::post('/product/store',[ProductController::class,'store'])->name('product.store');
+Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+Route::post('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
+Route::post('/product/destroy/{id}',[ProductController::class,'destroy'])->name('product.destroy');
 });
