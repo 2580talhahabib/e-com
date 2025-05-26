@@ -23,6 +23,10 @@
                             <a class="js-arrow  {{ request()->routeIs('size.index') ? 'text-success ' : '' }}" href="{{ route('size.index') }}" style="text-decoration: none;color:gray">
                                 <i class="fas fa-tachometer-alt "></i>Size</a>
                         </li>
+                           <li class="active has-sub" style="list-style:none;"   >
+                            <a class="js-arrow  {{ request()->routeIs('color.index') ? 'text-success ' : '' }}" href="{{ route('color.index') }}" style="text-decoration: none;color:gray">
+                                <i class="fas fa-tachometer-alt "></i>Color</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
