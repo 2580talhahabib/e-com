@@ -33,9 +33,10 @@
                                 </thead>
                                 <tbody>
                                     @if ($products->isNotEmpty())
-                                        @foreach ($Products as $Product)
+                                        @foreach ($products as $Product)
                                             <tr>
                                                 <td>{{ $Product->id }}</td>
+                                                <td>{{ $Product->name }}</td>
                                                 <td>{{ $Product->slug }}</td>
                                                 <td>{{( $Product->status  == 1) ? 'Active' : 'InActive'}}</td>
                                                 <td class="text-center ">
