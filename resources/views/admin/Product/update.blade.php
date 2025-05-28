@@ -42,64 +42,68 @@
                                                     <div class="input-group-addon">Image</div>
                                                     <input type="file" id="username3" name="image" class="form-control">
                                                 </div>
-                                                <div class="img-container">
-                                                    <img src="{{ asset('storage/product/media' .$edit->image) }}" alt="">
+                                               
+                                            </div>
+                                             <div class="img-container">
+                                                {{-- {{ dd($edit->image) }} --}}
+                                                @if (asset('uploads/product/'.$edit->image) )
+ <img src="{{ url('uploads/product/'.$edit->image) }}" height="100px" style="margin: 10px;" width="200px" alt="{{ $edit->image }}">
+ @endif
                                                 </div>
                                                    
-                                            </div>
                                                <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Brand</div>
-                                                    <input type="text" id="username3" name="brand" class="form-control">
+                                                    <input type="text" id="username3" value="{{ $edit->brand }}" name="brand" class="form-control">
                                                 </div>
                                                    
                                             </div>
                                                 <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Model</div>
-                                                    <input type="text" id="username3" name="model" class="form-control">
+                                                    <input type="text" id="username3" value="{{ $edit->model }}" name="model" class="form-control">
                                                 </div>
                                                     
                                             </div>
                                              <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Short Descripation</div>
-                                                   <textarea name="short_desc" id="" class="form-control"></textarea>
+                                                   <textarea name="short_desc" id="" class="form-control"> {{ $edit->short_desc ?? ''}}</textarea>
                                                 </div>
                                                   
                                             </div>
                                               <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Descripation</div>
-                                                   <textarea name="desc" id="" class="form-control"></textarea>
+                                                   <textarea name="desc" id="" class="form-control">{{ $edit->desc ?? '' }}</textarea>
                                                 </div>
                                                   
                                             </div>
                                               <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">keyword</div>
-                                                   <textarea name="keywords" id="" class="form-control"></textarea>
+                                                   <textarea name="keywords" id="" class="form-control">{{ $edit->keywords ?? '' }}</textarea>
                                                 </div>
                                                   
                                             </div>
                                               <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Technical Specification</div>
-                                                   <textarea name="technical_specification" id="" class="form-control"></textarea>
+                                                   <textarea name="technical_specification" id="" class="form-control">{{ $edit->technical_specification ?? '' }}</textarea>
                                                 </div>
                                                   
                                             </div>
                                               <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">uses</div>
-                                                   <textarea name="uses" id="" class="form-control"></textarea>
+                                                   <textarea name="uses" id="" class="form-control">{{ $edit->uses ?? '' }}</textarea>
                                                 </div>
                                                   
                                             </div>
                                                <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Warnty</div>
-                                                   <textarea name="waranty" id="" class="form-control"></textarea>
+                                                   <textarea name="waranty" id="" class="form-control">{{ $edit->waranty ?? '' }}</textarea>
                                                 </div>
                                                   
                                             </div>
@@ -108,8 +112,8 @@
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Status</div>
                                                    <select name="status" id="" class="form-control">
-                                                <option value="1" >Active</option>
-                                                <option value="0" >InActive</option>
+                                                <option value="1" {{ $edit->status == 1 ? 'selected' : '' }} >Active</option>
+                                                <option value="0" {{ $edit->status == 0 ?  'selected' : '' }} >InActive</option>
                                                 </select> 
                                                 </div>
                                             </div>
