@@ -13,18 +13,18 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
-            $table->string('image');
-            $table->string('name');
-            $table->string('slug');
-            $table->string('brand');
-            $table->string('model');
-            $table->longText('short_desc');
-            $table->longText('desc');
-            $table->longText('keywords');
-            $table->longText('technical_specification');
-            $table->longText('uses');
-            $table->longText('waranty');
+            $table->foreignId('category_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->string('image')->nullable();
+            $table->string('name')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('model')->nullable();
+            $table->longText('short_desc')->nullable();
+            $table->longText('desc')->nullable();
+            $table->longText('keywords')->nullable();
+            $table->longText('technical_specification')->nullable();
+            $table->longText('uses')->nullable();
+            $table->longText('waranty')->nullable();
             $table->integer('status')->default(1);
             $table->timestamps();
         });

@@ -178,7 +178,7 @@
 
     <!-- Main JS-->
     <script src="{{ url('admin/js/main.js') }}"></script>
-
+@yield('admin-script')
 </body>
 
 </html>
