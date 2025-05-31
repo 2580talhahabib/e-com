@@ -36,6 +36,10 @@
                             <a class="js-arrow  {{ request()->routeIs('customer.index') ? 'text-success ' : '' }}" href="{{ route('customer.index') }}" style="text-decoration: none;color:gray">
                                 <i class="fas fa-tachometer-alt "></i>Customers</a>
                         </li>
+                              <li class="active has-sub" style="list-style:none;"   >
+                            <a class="js-arrow  {{ request()->routeIs('brand.index') ? 'text-success ' : '' }}" href="{{ route('brand.index') }}" style="text-decoration: none;color:gray">
+                                <i class="fas fa-tachometer-alt "></i>Brands</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

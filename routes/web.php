@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AuthController;
+use App\Http\Controllers\admin\BrandController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ColorController;
 use App\Http\Controllers\admin\CouponController;
@@ -87,3 +88,13 @@ Route::post('/customer/update/{id}',[CustomerController::class,'update'])->name(
 Route::post('/customer/destroy/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');
 // Customer Status Change 
 Route::get('/customer/status/{stat_id}', [StatusController::class, 'statusChange'])->name('customer.statuschange');});
+
+
+
+// Brand  Controller 
+Route::get('/brand/create',[BrandController::class,'create'])->name('brand.create');
+Route::get('/brand/index',[BrandController::class,'index'])->name('brand.index');
+Route::post('/brand/store',[BrandController::class,'store'])->name('brand.store');
+Route::get('/brand/edit/{id}',[BrandController::class,'edit'])->name('brand.edit');
+Route::post('/brand/update/{id}',[BrandController::class,'update'])->name('brand.update');
+Route::post('/brand/destroy/{id}',[BrandController::class,'destroy'])->name('brand.destroy');
