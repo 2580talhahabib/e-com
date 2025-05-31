@@ -13,23 +13,28 @@
                         </li>
                          <li class="active has-sub" style="list-style:none;">
                             <a class="js-arrow  {{ request()->routeIs('category.index') ? 'text-success ' : '' }}" href="{{ route('category.index') }}" style="text-decoration: none;color:gray">
-                                <i class="fas fa-tachometer-alt "></i>Category</a>
+                                <i class="fas fa-tachometer-alt "></i>Categories</a>
                         </li>
                         <li class="active has-sub" style="list-style:none;"   >
                             <a class="js-arrow  {{ request()->routeIs('Coupon.index') ? 'text-success ' : '' }}" href="{{ route('Coupon.index') }}" style="text-decoration: none;color:gray">
-                                <i class="fas fa-tachometer-alt "></i>Coupon</a>
+                                <i class="fas fa-tachometer-alt "></i>Coupons</a>
                         </li>
                          <li class="active has-sub" style="list-style:none;"   >
                             <a class="js-arrow  {{ request()->routeIs('size.index') ? 'text-success ' : '' }}" href="{{ route('size.index') }}" style="text-decoration: none;color:gray">
-                                <i class="fas fa-tachometer-alt "></i>Size</a>
+                                <i class="fas fa-tachometer-alt "></i>Sizes</a>
                         </li>
                            <li class="active has-sub" style="list-style:none;"   >
                             <a class="js-arrow  {{ request()->routeIs('color.index') ? 'text-success ' : '' }}" href="{{ route('color.index') }}" style="text-decoration: none;color:gray">
-                                <i class="fas fa-tachometer-alt "></i>Color</a>
+                                <i class="fas fa-tachometer-alt "></i>Colors</a>
                         </li>
                              <li class="active has-sub" style="list-style:none;"   >
                             <a class="js-arrow  {{ request()->routeIs('product.index') ? 'text-success ' : '' }}" href="{{ route('product.index') }}" style="text-decoration: none;color:gray">
-                                <i class="fas fa-tachometer-alt "></i>Product</a>
+                                <i class="fas fa-tachometer-alt "></i>Products</a>
+                        </li>
+                          </li>
+                             <li class="active has-sub" style="list-style:none;"   >
+                            <a class="js-arrow  {{ request()->routeIs('customer.index') ? 'text-success ' : '' }}" href="{{ route('customer.index') }}" style="text-decoration: none;color:gray">
+                                <i class="fas fa-tachometer-alt "></i>Customers</a>
                         </li>
                     </ul>
                 </nav>

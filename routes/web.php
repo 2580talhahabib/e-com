@@ -4,9 +4,11 @@ use App\Http\Controllers\admin\AuthController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ColorController;
 use App\Http\Controllers\admin\CouponController;
+use App\Http\Controllers\admin\CustomerController;
 use App\Http\Controllers\admin\DashoardController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\SizeController;
+use App\Http\Controllers\admin\StatusController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -75,4 +77,13 @@ Route::post('/product/store',[ProductController::class,'store'])->name('product.
 Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
 Route::post('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
 Route::post('/product/destroy/{id}',[ProductController::class,'destroy'])->name('product.destroy');
-});
+
+// Customer  Controller 
+Route::get('/customer/create',[CustomerController::class,'create'])->name('customer.create');
+Route::get('/customer/index',[CustomerController::class,'index'])->name('customer.index');
+Route::post('/customer/store',[CustomerController::class,'store'])->name('customer.store');
+Route::get('/customer/edit/{id}',[CustomerController::class,'edit'])->name('customer.edit');
+Route::post('/customer/update/{id}',[CustomerController::class,'update'])->name('customer.update');
+Route::post('/customer/destroy/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');
+// Customer Status Change 
+Route::get('/customer/status/{stat_id}', [StatusController::class, 'statusChange'])->name('customer.statuschange');});
