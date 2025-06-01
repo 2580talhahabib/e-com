@@ -27,7 +27,8 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>City</th>
-                                        <th class="text-center">Action</th>
+                                        <th class="text-left">Action</th>
+                                      
 
                                     </tr>
                                 </thead>
@@ -39,7 +40,8 @@
                                                 <td>{{ $customer->name }}</td>
                                                 <td>{{ $customer->email }}</td>
                                                 <td>{{ $customer->city }}</td>
-                                             <td class="text-center">
+                                             <td >
+                                                
                                                     <a href="{{ route('customer.edit', $customer->id) }}"
                                                         class="btn btn-sm btn-primary me-2">Update</a>
                                                     <a data-id="{{ $customer->id }}"

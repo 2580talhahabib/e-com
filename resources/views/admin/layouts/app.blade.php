@@ -32,6 +32,7 @@
 
     <!-- Main CSS-->
     <link href="{{ url('admin/css/theme.css') }}" rel="stylesheet" media="all">
+    
 
 </head>
 

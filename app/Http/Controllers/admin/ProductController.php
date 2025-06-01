@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Color;
 use App\Models\Product;
@@ -21,6 +22,7 @@ class ProductController extends Controller
     public function create(){
    
         // dd($['sizes']);
+        
         return view('admin.Product.create');
     }
 
@@ -38,6 +40,7 @@ public function store(Request $req){
 
     public function edit($id){
           $data['categories'] = Category::get();
+          $data['brands'] = Brand::get();
         $data['colors'] = Color::get();
         $data['sizes'] = Size::get();
         $data['edit'] = Product::find($id);
@@ -73,12 +76,19 @@ public function store(Request $req){
         'slug' => str_replace(' ','-',strtolower($req->name)),
         'brand' => $req->brand,
         'model' => $req->model,
-        'short_desc' => $req->short_desc,
-        'desc' => $req->desc,
-        'keywords' => $req->keywords,
-        'technical_specification' => $req->technical_specification,
-        'uses' => $req->uses,
-        'waranty' => $req->waranty,
+        'short_desc' => strip_tags($req->short_desc),
+        'desc' => strip_tags($req->desc),
+        'keywords' =>strip_tags( $req->keywords),
+        'technical_specification' => strip_tags($req->technical_specification),
+        'uses' => strip_tags($req->uses),
+        'waranty' => strip_tags($req->waranty),
+        'lead_time' => strip_tags($req->lead_time),
+        'tax' => strip_tags($req->tax),
+        'tax_type' => strip_tags($req->tax_type),
+        'is_promo' => strip_tags($req->is_promo),
+        'is_featured' => strip_tags($req->is_featured),
+        'is_discounted' => strip_tags($req->is_discounted),
+        'is_trending' => strip_tags($req->is_trending),
         'status' => $req->status,
     ]);
 

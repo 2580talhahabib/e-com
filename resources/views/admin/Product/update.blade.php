@@ -38,7 +38,15 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon">Brand</div>
-                                        <input type="text" name="brand" class="form-control">
+                                        {{-- <input type="text" name="brand" class="form-control" --}}
+                                      <select name="brand" class="form-control">
+                                            <option value="">Select a Brand</option>
+                                            @if ($brands->isNotEmpty()) 
+                                            @foreach ($brands as $brand)
+                                            <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                            @endforeach
+                                             @endif
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -50,37 +58,99 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon">Short Description</div>
-                                        <textarea name="short_desc" class="form-control"></textarea>
+                                        <textarea id="editor_short_desc" cols="10" name="short_desc" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon">Description</div>
-                                        <textarea name="desc" class="form-control"></textarea>
+                                        <textarea id="editor_desc" name="desc" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon">Keywords</div>
-                                        <textarea name="keywords" class="form-control"></textarea>
+                                        <textarea id="editor_keywords" name="keywords" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon">Technical Specification</div>
-                                        <textarea name="technical_specification" class="form-control"></textarea>
+                                        <textarea id="editor_technical_specification" name="technical_specification" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon">Uses</div>
-                                        <textarea name="uses" class="form-control"></textarea>
+                                        <textarea id="editor_uses" name="uses" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon">Warranty</div>
-                                        <textarea name="warranty" class="form-control"></textarea>
+                                        <textarea id="editor_warranty" name="warranty" class="form-control"></textarea>
+                                    </div>
+                                    <div class="form-group mt-3">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">lead_time</div>
+                                       <input type="text" class="form-control" name="lead_time">
+                                    </div>
+                                </div>
+                                 <div class="form-group mt-3">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">tax</div>
+                                       <input type="text" class="form-control" name="tax">
+                                    </div>
+                                </div>
+                                 <div class="form-group mt-3">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">tax_type</div>
+                                       <input type="text" class="form-control" name="tax_type">
+                                    </div>
+                                </div>
+                                 <div class="form-group mt-3">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">is_promo</div>
+                                       <select name="is_promo" id="is_promo" class="form-control">
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                       </select>
+                                    </div>
+                                </div>
+                                 <div class="form-group mt-3">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">is_promo</div>
+                                       <select name="is_promo" id="is_promo" class="form-control">
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                       </select>
+                                    </div>
+                                </div>
+                                 <div class="form-group mt-3">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">is_featured	</div>
+                                       <select name="is_featured" id="is_featured" class="form-control">
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                       </select>
+                                    </div>
+                                </div>
+                                 <div class="form-group mt-3">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">is_discounted</div>
+                                       <select name="is_discounted" id="is_discounted" class="form-control">
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                       </select>
+                                    </div>
+                                </div>
+                                 <div class="form-group mt-3">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">is_trending</div>
+                                       <select name="is_trending" id="is_trending" class="form-control">
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                       </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -265,5 +335,6 @@
         e.preventDefault();
         $(this).closest('.inventory-item').remove();
     });
+
 </script>
 @endsection

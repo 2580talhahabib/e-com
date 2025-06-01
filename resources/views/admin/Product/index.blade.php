@@ -27,7 +27,7 @@
                                         <th>Name</th>
                                         <th>Slug</th>
                                         <th>Status</th>
-                                        <th class="text-center">Action</th>
+                                        <th class="text-right">Action</th>
 
                                     </tr>
                                 </thead>
@@ -39,7 +39,7 @@
                                                 <td>{{ $Product->name }}</td>
                                                 <td>{{ $Product->slug }}</td>
                                                 <td>{{( $Product->status  == 1) ? 'Active' : 'InActive'}}</td>
-                                                <td class="text-center ">
+                                                <td >
                                                     <a href="{{ route('product.edit', $Product->id) }}"
                                                         class="btn btn-sm btn-primary me-2">Update</a>
 
