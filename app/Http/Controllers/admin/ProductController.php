@@ -55,6 +55,7 @@ public function store(Request $req){
         $update = Product::find($id);
           $req->validate([
         'name' => 'required',
+        
     ]);
 
     $originalpath = '';
