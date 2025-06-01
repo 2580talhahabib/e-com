@@ -28,6 +28,10 @@ class CouponController extends Controller
             'title'=>$req->title,
              'code'=>$req->code,
               'value'=>$req->value,
+              'type'=>$req->type,
+              'min_order_amt'=>$req->min_order_amt,
+              'is_onetime'=>$req->is_onetime,
+              'status'=>$req->status,
         ]);
         return redirect()->route('Coupon.index')->with('success','Coupon Created Successfully');
     }
@@ -42,6 +46,10 @@ class CouponController extends Controller
             'title'=>$req->title,
              'code'=>$req->code,
               'value'=>$req->value,
+              'type'=>$req->type,
+              'min_order_amt'=>$req->min_order_amt,
+              'is_onetime'=>$req->is_onetime,
+              'status'=>$req->status,
         ]);
         return redirect()->route('Coupon.index')->with('success','Coupon Updated Successfully');
         

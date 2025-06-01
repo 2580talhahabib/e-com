@@ -9,7 +9,7 @@
                                 <div class="card">
                                     <div class="card-header">Coupon Update</div>
                                     <div class="card-body card-block">
-                                        <form action="{{ route('Coupon.store') }}" method="post" >
+                                        <form action="{{ route('Coupon.update',$edit->id) }}" method="post" >
                                             @csrf
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -48,7 +48,39 @@
                                                         </div>
                                                     @enderror
                                             </div>
-                                    
+                                      <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">Type</div>
+                                                      <select name="type" id="type" class="form-control">
+                                                    <option value="1">Value</option>
+                                                    <option value="0">Percentage</option>
+                                                   </select>
+                                                </div>
+                                            </div>
+                                               <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">Min Order Amt</div>
+                                                    <input type="text" id="username3" name="min_order_amt" class="form-control">
+                                                </div>
+                                            </div>
+                                               <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">Is One Time</div>
+                                                   <select name="is_onetime" id="is_onetime" class="form-control">
+                                                    <option value="1">yes</option>
+                                                    <option value="0">No</option>
+                                                   </select>
+                                                </div>
+                                            </div>
+                                      <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">status</div>
+                                                   <select name="status" id="status" class="form-control">
+                                                    <option value="1">Active</option>
+                                                    <option value="0">InActive</option>
+                                                   </select>
+                                                </div>
+                                            </div>
                                             <div class="form-actions form-group">
                                                 <button type="submit" class="btn btn-primary btn-sm">Submit</button>
                                             </div>

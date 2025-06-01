@@ -27,7 +27,7 @@
                                         <th>TiTle</th>
                                         <th>Code</th>
                                         <th>Value</th>
-                                        <th class="text-center">Action</th>
+                                        <th class="">Action</th>
 
                                     </tr>
                                 </thead>
@@ -39,7 +39,7 @@
                                                 <td>{{ $coupon->title }}</td>
                                                 <td>{{ $coupon->code }}</td>
                                                 <td>{{ $coupon->value }}</td>
-                                                <td class="text-center ">
+                                                <td class=" ">
                                                     <a href="{{ route('Coupon.edit', $coupon->id) }}"
                                                         class="btn btn-sm btn-primary me-2">Update</a>
 
