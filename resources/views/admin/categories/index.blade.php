@@ -26,7 +26,7 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Slug</th>
-                                        <th class="text-center">Action</th>
+                                        <th >Action</th>
 
                                     </tr>
                                 </thead>
@@ -37,7 +37,7 @@
                                                 <td>{{ $category->id }}</td>
                                                 <td>{{ $category->name }}</td>
                                                 <td>{{ $category->slug }}</td>
-                                                <td class="text-center ">
+                                                <td >
                                                     <a href="{{ route('category.edit', $category->id) }}"
                                                         class="btn btn-sm btn-primary me-2">Update</a>
 
