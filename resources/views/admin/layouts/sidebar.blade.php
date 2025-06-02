@@ -40,6 +40,10 @@
                             <a class="js-arrow  {{ request()->routeIs('brand.index') ? 'text-success ' : '' }}" href="{{ route('brand.index') }}" style="text-decoration: none;color:gray">
                                 <i class="fas fa-tachometer-alt "></i>Brands</a>
                         </li>
+                          <li class="active has-sub" style="list-style:none;"   >
+                            <a class="js-arrow  {{ request()->routeIs('tax.index') ? 'text-success ' : '' }}" href="{{ route('tax.index') }}" style="text-decoration: none;color:gray">
+                                <i class="fas fa-tachometer-alt "></i>Tax</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

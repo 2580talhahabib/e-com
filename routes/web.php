@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\DashoardController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\SizeController;
 use App\Http\Controllers\admin\StatusController;
+use App\Http\Controllers\admin\TaxController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -90,7 +91,6 @@ Route::post('/customer/destroy/{id}',[CustomerController::class,'destroy'])->nam
 Route::get('/customer/status/{stat_id}', [StatusController::class, 'statusChange'])->name('customer.statuschange');});
 
 
-
 // Brand  Controller 
 Route::get('/brand/create',[BrandController::class,'create'])->name('brand.create');
 Route::get('/brand/index',[BrandController::class,'index'])->name('brand.index');
@@ -98,3 +98,13 @@ Route::post('/brand/store',[BrandController::class,'store'])->name('brand.store'
 Route::get('/brand/edit/{id}',[BrandController::class,'edit'])->name('brand.edit');
 Route::post('/brand/update/{id}',[BrandController::class,'update'])->name('brand.update');
 Route::post('/brand/destroy/{id}',[BrandController::class,'destroy'])->name('brand.destroy');
+
+
+
+// Tax  Controller 
+Route::get('/tax/create',[TaxController::class,'create'])->name('tax.create');
+Route::get('/tax/index',[TaxController::class,'index'])->name('tax.index');
+Route::post('/tax/store',[TaxController::class,'store'])->name('tax.store');
+Route::get('/tax/edit/{id}',[TaxController::class,'edit'])->name('tax.edit');
+Route::post('/tax/update/{id}',[TaxController::class,'update'])->name('tax.update');
+Route::post('/tax/destroy/{id}',[TaxController::class,'destroy'])->name('tax.destroy');

@@ -9,6 +9,7 @@ use App\Models\Color;
 use App\Models\Product;
 use App\Models\Product_attrubutes;
 use App\Models\Size;
+use App\Models\Tax;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -40,6 +41,7 @@ public function store(Request $req){
 
     public function edit($id){
           $data['categories'] = Category::get();
+          $data['taxes'] = Tax::get();
           $data['brands'] = Brand::get();
         $data['colors'] = Color::get();
         $data['sizes'] = Size::get();

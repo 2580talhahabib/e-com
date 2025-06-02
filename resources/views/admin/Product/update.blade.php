@@ -105,7 +105,12 @@
                                  <div class="form-group mt-3">
                                     <div class="input-group">
                                         <div class="input-group-addon">tax_type</div>
-                                       <input type="text" class="form-control" name="tax_type">
+                                        <select name="tax_type" id="" class="form-control">
+                                            @foreach ($taxes as $tax)
+                                                <option value="{{$tax->id  }}">{{ $tax->tax_desc }}</option> 
+                                            </select>
+                                     
+                                            @endforeach
                                     </div>
                                 </div>
                                  <div class="form-group mt-3">
