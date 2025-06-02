@@ -83,6 +83,7 @@ Route::post('/product/destroy/{id}',[ProductController::class,'destroy'])->name(
 // Customer  Controller 
 Route::get('/customer/create',[CustomerController::class,'create'])->name('customer.create');
 Route::get('/customer/index',[CustomerController::class,'index'])->name('customer.index');
+Route::get('/customer/show/{id}',[CustomerController::class,'show'])->name('customer.show');
 Route::post('/customer/store',[CustomerController::class,'store'])->name('customer.store');
 Route::get('/customer/edit/{id}',[CustomerController::class,'edit'])->name('customer.edit');
 Route::post('/customer/update/{id}',[CustomerController::class,'update'])->name('customer.update');

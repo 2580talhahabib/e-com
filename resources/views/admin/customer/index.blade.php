@@ -42,8 +42,8 @@
                                                 <td>{{ $customer->city }}</td>
                                              <td >
                                                 
-                                                    <a href="{{ route('customer.edit', $customer->id) }}"
-                                                        class="btn btn-sm btn-primary me-2">Update</a>
+                                                    <a href="{{ route('customer.show', $customer->id) }}"
+                                                        class="btn btn-sm btn-primary me-2">View</a>
                                                     <a data-id="{{ $customer->id }}"
                                                         class="btn btn-sm status me-2 {{ $customer->status ? 'btn-success' : 'btn-danger' }}">{{ $customer->status ? 'Active' : 'Inactive' }}</a>
                                                 </td>
