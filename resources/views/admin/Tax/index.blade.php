@@ -30,7 +30,7 @@
                                         <th>ID</th>
                                         <th>Tax Descripation</th>
                                         <th>Tax Value</th>
-                                        <th >Actions</th>
+                                        <th class="float-left">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,7 +40,7 @@
                                             <td>{{ $tax->tax_desc }}</td>
                                             <td>{{ $tax->tax_value }}</td>
                                             <td>
-                                                <div class="d-flex justify-content-center">
+                                                <div class="d-flex justify-content-start">
                                                     <a href="{{ route('tax.edit', $tax->id) }}" 
                                                        class="btn btn-sm btn-primary mr-2">
                                                        <i class="fas fa-edit"></i> Edit

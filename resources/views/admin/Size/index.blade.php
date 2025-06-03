@@ -26,7 +26,7 @@
                                         <th>ID</th>
                                         <th>Size</th>
                                         <th>Status</th>
-                                        <th class="text-center">Action</th>
+                                        <th class="text-left">Action</th>
 
                                     </tr>
                                 </thead>
@@ -37,7 +37,7 @@
                                                 <td>{{ $size->id }}</td>
                                                 <td>{{ $size->size }}</td>
                                                 <td>{{( $size->status  == 1) ? 'Active' : 'InActive'}}</td>
-                                                <td class="text-center ">
+                                                <td class="d-flex  justify-content-start">
                                                     <a href="{{ route('size.edit', $size->id) }}"
                                                         class="btn btn-sm btn-primary me-2">Update</a>
 
@@ -51,11 +51,7 @@
                                             </tr>
                                         @endforeach
                                     @endif
-
-
-
-
-                                </tbody>
+</tbody>
                             </table>
                         </div>
                         <!-- END DATA TABLE-->

@@ -31,7 +31,7 @@
                                         <th>Name</th>
                                         <th>Image</th>
                                         <th>Status</th>
-                                        <th >Actions</th>
+                                        <th class="text-left">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,7 +54,7 @@
                                                 </span>
                                             </td class="ml-5">
                                             <td>
-                                                <div class="d-flex justify-content-center">
+                                                <div class="d-flex justify-content-start">
                                                     <a href="{{ route('brand.edit', $brand->id) }}" 
                                                        class="btn btn-sm btn-primary mr-2">
                                                        <i class="fas fa-edit"></i> Edit

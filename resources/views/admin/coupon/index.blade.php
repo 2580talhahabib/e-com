@@ -27,7 +27,7 @@
                                         <th>TiTle</th>
                                         <th>Code</th>
                                         <th>Value</th>
-                                        <th class="">Action</th>
+                                        <th class="text-left">Action</th>
 
                                     </tr>
                                 </thead>
@@ -39,7 +39,7 @@
                                                 <td>{{ $coupon->title }}</td>
                                                 <td>{{ $coupon->code }}</td>
                                                 <td>{{ $coupon->value }}</td>
-                                                <td class=" ">
+                                                <td class="d-flex  justify-content-start">
                                                     <a href="{{ route('Coupon.edit', $coupon->id) }}"
                                                         class="btn btn-sm btn-primary me-2">Update</a>
 

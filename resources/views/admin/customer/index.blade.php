@@ -40,7 +40,7 @@
                                                 <td>{{ $customer->name }}</td>
                                                 <td>{{ $customer->email }}</td>
                                                 <td>{{ $customer->city }}</td>
-                                             <td >
+                                             <td  >
                                                 
                                                     <a href="{{ route('customer.show', $customer->id) }}"
                                                         class="btn btn-sm btn-primary me-2">View</a>

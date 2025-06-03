@@ -26,7 +26,7 @@
                                         <th>ID</th>
                                         <th>Color</th>
                                         <th>Status</th>
-                                        <th class="text-center">Action</th>
+                                        <th class="text-left">Action</th>
 
                                     </tr>
                                 </thead>
@@ -37,7 +37,7 @@
                                                 <td>{{ $color->id }}</td>
                                                 <td>{{ $color->color }}</td>
                                                 <td>{{( $color->status  == 1) ? 'Active' : 'InActive'}}</td>
-                                                <td class="text-center ">
+                                                <td class="d-flex  justify-content-start ">
                                                     <a href="{{ route('color.edit', $color->id) }}"
                                                         class="btn btn-sm btn-primary me-2">Update</a>
 
