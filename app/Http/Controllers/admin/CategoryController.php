@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class CategoryController extends Controller
 {
@@ -28,6 +29,7 @@ class CategoryController extends Controller
         'name' => $req->name,
         'slug' => str_replace(' ', '-', strtolower($req->name)),
         'parent_category' => $req->parent_category,
+        'show_on_home'=>$req->show_on_home,
     ];
 
     if($req->hasFile('category_image')){
@@ -63,8 +65,9 @@ class CategoryController extends Controller
     }
     $update->update([
             'name'=>$req->name,
-            'slug'=>str_replace(' ','-',strtolower($req->slug)),
+            'slug'=>str_replace(' ','-',strtolower($req->name)),
             'parent_category' => $req->parent_category,
+            'show_on_home'=>$req->show_on_home,
             'category_image'=>$req->$path,
         ]);
         return redirect()->route('category.index')->with('success','Category Updated Successfully');

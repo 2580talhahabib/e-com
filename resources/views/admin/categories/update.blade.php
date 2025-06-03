@@ -46,6 +46,16 @@
                                         
                                       
                                             <div>
+                                                 <div class="form-group">
+    <label for="show_on_home" class="control-label mb-1">Show on Home</label>
+    <input type="hidden" name="show_on_home" value="0">
+    <input type="checkbox" 
+           id="show_on_home" 
+           name="show_on_home" 
+           value="1" 
+           class="ml-1" 
+           {{ $edit->show_on_home ? 'checked' : '' }}>
+</div>
                                                 <button type="submit" class="btn btn-primary w-100">Sumit</button>
                                             </div>
                                         </form>
