@@ -35,7 +35,7 @@ class BrandController extends Controller
            'slug'=>str_replace(' ','-',strtolower($req->name)),
             'image'=>$path,
             'status'=>$req->status,
-
+             'show_on_home'=>$req->show_on_home,
         ]);
 
         return redirect()->route('brand.index')->with('success','Brand Created Successfully');
@@ -66,6 +66,7 @@ class BrandController extends Controller
             'slug'=>str_replace(' ','-',strtolower($req->slug)),
                'image'=>$path,
                'status'=>$req->status,
+                            'show_on_home'=>$req->show_on_home,
         ]);
         return redirect()->route('brand.index')->with('success','Brand Updated Successfully');
         

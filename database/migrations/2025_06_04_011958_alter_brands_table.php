@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('categories', function (Blueprint $table) {
+        Schema::table('brands', function (Blueprint $table) {
             $table->integer('show_on_home')->default(1);
         });
     }
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->dropColumn('show_on_home');
+        Schema::table('brands', function (Blueprint $table) {
+            //
         });
     }
 };

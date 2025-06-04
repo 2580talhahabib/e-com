@@ -45,7 +45,7 @@
            name="show_on_home" 
            value="1" 
            class="ml-1" 
-           {{ old('show_on_home') ? 'checked' : '' }}>
+          >
 </div>
                                             <div>
                                                 <button type="submit" class="btn btn-primary w-100">Sumit</button>

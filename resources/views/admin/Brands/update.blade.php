@@ -46,10 +46,14 @@
                                                 </select> 
                                                 </div>
                                             </div>
-                                    
+                                      <div class="form-group">
+                                                    <lable class="form-label">Show on Home</lable>
+                                                <input type="hidden" name="show_on_home" id="" value="0">
+                                                <input type="checkbox" name="show_on_home" id="" value="1" {{ $edit->show_on_home ? 'checked' : '' }}>
+                                                </div>
                                     
                                             <div class="form-actions form-group">
-                                                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                                <button type="submit" class="btn btn-primary btn-sm">Update</button>
                                             </div>
                                         </form>
                                     </div>
