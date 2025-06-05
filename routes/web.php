@@ -11,6 +11,7 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\SizeController;
 use App\Http\Controllers\admin\StatusController;
 use App\Http\Controllers\admin\TaxController;
+use App\Http\Controllers\frontant\FrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 // admin Routes 
 // AuthController 
@@ -100,8 +99,6 @@ Route::get('/brand/edit/{id}',[BrandController::class,'edit'])->name('brand.edit
 Route::post('/brand/update/{id}',[BrandController::class,'update'])->name('brand.update');
 Route::post('/brand/destroy/{id}',[BrandController::class,'destroy'])->name('brand.destroy');
 
-
-
 // Tax  Controller 
 Route::get('/tax/create',[TaxController::class,'create'])->name('tax.create');
 Route::get('/tax/index',[TaxController::class,'index'])->name('tax.index');
@@ -109,3 +106,22 @@ Route::post('/tax/store',[TaxController::class,'store'])->name('tax.store');
 Route::get('/tax/edit/{id}',[TaxController::class,'edit'])->name('tax.edit');
 Route::post('/tax/update/{id}',[TaxController::class,'update'])->name('tax.update');
 Route::post('/tax/destroy/{id}',[TaxController::class,'destroy'])->name('tax.destroy');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// frontant Routes
+
+// FrontantController 
+Route::get('/',[FrontController::class, 'index'])->name('frontant.index');
+Route::get('/category/{id}',[FrontController::class, 'catfilter'])->name('frontant.catfilter');
