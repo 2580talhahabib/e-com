@@ -12,4 +12,8 @@ class Product extends Model
      public function categories(){
      return  $this->belongsTo(Category::class);
     }
+
+    public function product_attr(){
+        return $this->hasMany(Product_attrubutes::class);
+    }
 }

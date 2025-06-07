@@ -125,3 +125,4 @@ Route::post('/tax/destroy/{id}',[TaxController::class,'destroy'])->name('tax.des
 // FrontantController 
 Route::get('/',[FrontController::class, 'index'])->name('frontant.index');
 Route::get('/category/{id}',[FrontController::class, 'catfilter'])->name('frontant.catfilter');
+Route::get('/productfilter',[FrontController::class, 'productfilter'])->name('frontant.productfilter');
