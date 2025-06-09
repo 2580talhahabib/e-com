@@ -5,12 +5,14 @@ namespace App\Http\Controllers\frontant;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\HomeBanner;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
   public function index(){
+ $data['homes']=HomeBanner::where('status',1)->take(4)->get();
  $data['home_categories']=Category::where('show_on_home',1)->take(4)->get();
  $data['categories']=Category::take(5)->get();
   $data['products'] = Product::get(); 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\HomeBanner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class HomeBannerController extends Controller
 {
@@ -64,11 +65,15 @@ class HomeBannerController extends Controller
         return redirect()->route('homebanner.index')->with('success','HomeBanner Updated Successfully');
         
     }
-       public function destroy($id){
+     
+         public function destroy($id){
          $destroy=HomeBanner::find($id);
          if($destroy == null){
-            return redirect()->route('homebanner.index')->with('danger','banner Not Found');
+            return redirect()->route('homebanner.index')->with('danger','HomeBanner Not Found');
          }else{
+            if($destroy->image && file_exists(public_path('uploads/Banners/'.$destroy->image))){
+                File::delete(public_path('uploads/Banners/'.$destroy->image));
+            }
             $destroy->delete();
             return redirect()->route('homebanner.index')->with('success','HomeBanner Deleted Successfully');
 
