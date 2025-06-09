@@ -44,6 +44,10 @@
                             <a class="js-arrow  {{ request()->routeIs('tax.index') ? 'text-success ' : '' }}" href="{{ route('tax.index') }}" style="text-decoration: none;color:gray">
                                 <i class="fas fa-tachometer-alt "></i>Tax</a>
                         </li>
+                         <li class="active has-sub" style="list-style:none;"   >
+                            <a class="js-arrow  {{ request()->routeIs('homebanner.index') ? 'text-success ' : '' }}" href="{{ route('homebanner.index') }}" style="text-decoration: none;color:gray">
+                                <i class="fas fa-tachometer-alt "></i>Home Banner</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

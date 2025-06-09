@@ -7,11 +7,13 @@ use App\Http\Controllers\admin\ColorController;
 use App\Http\Controllers\admin\CouponController;
 use App\Http\Controllers\admin\CustomerController;
 use App\Http\Controllers\admin\DashoardController;
+use App\Http\Controllers\admin\HomeBannerController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\SizeController;
 use App\Http\Controllers\admin\StatusController;
 use App\Http\Controllers\admin\TaxController;
 use App\Http\Controllers\frontant\FrontController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -106,6 +108,14 @@ Route::post('/tax/store',[TaxController::class,'store'])->name('tax.store');
 Route::get('/tax/edit/{id}',[TaxController::class,'edit'])->name('tax.edit');
 Route::post('/tax/update/{id}',[TaxController::class,'update'])->name('tax.update');
 Route::post('/tax/destroy/{id}',[TaxController::class,'destroy'])->name('tax.destroy');
+
+// HomeBanner  Controller 
+Route::get('/homebanner/create',[HomeBannerController::class,'create'])->name('homebanner.create');
+Route::get('/homebanner/index',[HomeBannerController::class,'index'])->name('homebanner.index');
+Route::post('/homebanner/store',[HomeBannerController::class,'store'])->name('homebanner.store');
+Route::get('/homebanner/edit/{id}',[HomeBannerController::class,'edit'])->name('homebanner.edit');
+Route::post('/homebanner/update/{id}',[HomeBannerController::class,'update'])->name('homebanner.update');
+Route::post('/homebanner/destroy/{id}',[HomeBannerController::class,'destroy'])->name('homebanner.destroy');
 
 
 

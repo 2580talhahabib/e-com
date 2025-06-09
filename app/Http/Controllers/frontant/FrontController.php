@@ -13,7 +13,7 @@ class FrontController extends Controller
   public function index(){
  $data['home_categories']=Category::where('show_on_home',1)->take(4)->get();
  $data['categories']=Category::take(5)->get();
-  $data['products'] = Product::take(4)->get(); 
+  $data['products'] = Product::get(); 
   $data['brands'] = Brand::where('status',1)->where('show_on_home',1)->get(); 
     return view('frontant.index',$data);
   }
@@ -28,7 +28,7 @@ $products = Product::with('product_attr')->where('category_id', $id)->take(4)->g
             'message' => 'Product Not Found'
         ]);
     } 
-    // return view('frontant.index',$products);
+
 $html =view('frontant.partisal.products',compact('products'))->render();
     return response()->json([
         'status' => true,
@@ -52,7 +52,7 @@ public function productfilter(Request $req){
             'message' => 'Product Not Found'
         ]);
 }
-$html= view('frontant.partisal.filter',['product' => $product])->render();
+$html= view('frontant.partisal.filter',['products' => $product])->render();
 
  return response()->json([
         'status' => true,

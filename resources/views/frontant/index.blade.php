@@ -107,47 +107,7 @@
                   @endforeach
               @endif
            
-              <!-- promo right -->
-              {{-- <div class="col-md-7 no-padding">
-                <div class="aa-promo-right">
-                  <div class="aa-single-promo-right">
-                    <div class="aa-promo-banner">                      
-                      <img src="{{ url('frontant/img/promo-banner-3.jpg') }}" alt="img">                      
-                      <div class="aa-prom-content">
-                        <span>Exclusive Item</span>
-                        <h4><a href="#">For Men</a></h4>                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="aa-single-promo-right">
-                    <div class="aa-promo-banner">                      
-                      <img src="{{ url('frontant/img/promo-banner-2.jpg') }}" alt="img">                      
-                      <div class="aa-prom-content">
-                        <span>Sale Off</span>
-                        <h4><a href="#">On Shoes</a></h4>                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="aa-single-promo-right">
-                    <div class="aa-promo-banner">                      
-                      <img src="{{ url('frontant/img/promo-banner-4.jpg') }}" alt="img">                      
-                      <div class="aa-prom-content">
-                        <span>New Arrivals</span>
-                        <h4><a href="#">For Kids</a></h4>                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="aa-single-promo-right">
-                    <div class="aa-promo-banner">                      
-                      <img src="{{ url('frontant/img/promo-banner-5.jpg') }}" alt="img">                      
-                      <div class="aa-prom-content">
-                        <span>25% Off</span>
-                        <h4><a href="#">For Bags</a></h4>                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> --}}
+              
             </div>
           </div>
         </div>
@@ -374,39 +334,23 @@
             <div class="aa-popular-category-area">
               <!-- start prduct navigation -->
              <ul class="nav nav-tabs aa-products-tab" style="cursor: pointer" >
-                <li class="active "><a href="#" class="filter" data-filter="trending" >Trending</a></li>
+                <li  ><a href="#" class="filter" data-filter="trending" >Trending</a></li>
                 <li><a href="#" class="filter"  data-filter="featured">Featured</a></li>
-                <li><a href="#" class="filter" data-filter="discount" data data-toggle="tab">Discounted</a></li>                    
+                <li><a href="#" class="filter" data-filter="discount" >Discounted</a></li>                    
               </ul>
               <!-- Tab panes -->
               <div class="tab-content">
                 <!-- Start men popular category -->
-                <div class="tab-pane fade in active" id="popular">
-                  <ul class="aa-product-catg aa-popular-slider">
+                <div class="tab-pane fade in active trending" id="popular">
+                  
                     <!-- start single product item -->
-               @foreach ($products as $product)
-      <li>
-                      <figure>
-                        <a class="aa-product-img" href="#"><img src="{{ url('uploads/product/'.$product->image) }}"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                         <figcaption>
-                          <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
-                          <span class="aa-product-price">${{ $product->product_attr->first()->price }}</span><span class="aa-product-price"><del>${{ $product->product_attr->first()->mrp }}</del></span>
-                        </figcaption>
-                      </figure>                     
-                      <div class="aa-product-hvr-content">
-                       
-                                                    
-                      </div>
-                      <!-- product badge -->
-                      <span class="aa-badge aa-sale" href="#">SALE!</span>
-                    </li>
- @endforeach
+         
+ @include('frontant.partisal.products')
 
                      <!-- start single product item -->
                                                                                 
-                  </ul>
-                   <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+          
+                   
                 </div>
                 <!-- / latest product category -->              
               </div>
@@ -656,7 +600,12 @@
         dataType:'JSON',
         data:{filter:filter},
         success:function(response){
-          console.log(response)
+         if(response.status == true) {
+                    $(".trending").html(response.message);
+                } else {
+                    $(".trending").html(response.message);
+                }
+        console.log(response)
         }
       })
     })
